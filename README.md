@@ -32,5 +32,15 @@ npm run build
 /resources/views/admin/
 ```
 
-
-
+### 0.3 - Model User
+```
+php artisan make:migration add_column_role_to_users_table
+php artisan migrate
+```
+### 0.3.5 - Model
+```
+php artisan make:model StudentGroupe -m
+php artisan make:model Course -m
+php artisan make:model Status -m
+php artisan make:model SGCWT -m
+```

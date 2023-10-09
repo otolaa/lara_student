@@ -10,37 +10,23 @@
                         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
                                 class="fas fa-bars"></i></a>
                     </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ route('admin.main.index') }}" class="nav-link">Главная</a>
+                    </li>
                 </ul>
 
+                <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown user-menu">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                            <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
-                                class="user-image img-circle elevation-2" alt="User Image">
-                            <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
+                            <i class="fas fa-user"></i> {{ Auth::user()->name }}
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                            <!-- User image -->
-                            <li class="user-header bg-primary">
-                                <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
-                                    class="img-circle elevation-2" alt="User Image">
-                                <p>
-                                    {{ Auth::user()->name }}
-                                    <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
-                                </p>
-                            </li>
-                            <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                <a href="#" class="btn btn-default btn-flat float-right"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    Sign out
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        </ul>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <input type="submit" value="Выход" class="btn btn-xs btn-success">
+                        </form>
                     </li>
                 </ul>
             </nav>
@@ -58,8 +44,7 @@
                 <div class="float-right d-none d-sm-block">
                     <b>Version</b> 3.1.0
                 </div>
-                <strong>Copyright &copy; 2014-2023 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
-                reserved.
+                <span><a href="https://adminlte.io/themes/v3/">Live Preview</a></span>
             </footer>
         </div>
     </body>

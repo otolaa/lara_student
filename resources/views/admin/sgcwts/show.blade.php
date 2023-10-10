@@ -47,7 +47,11 @@
                                 </tr>
                                 <tr>
                                     <th>Slug</th>
-                                    <td>{{ $sgcwt->slug  }}</td>
+                                    <td>{{ $sgcwt->slug }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Status</th>
+                                    <td>{{ $statuses[$sgcwt->status_id]  }}</td>
                                 </tr>
                                 <tr>
                                     <th>Created</th>

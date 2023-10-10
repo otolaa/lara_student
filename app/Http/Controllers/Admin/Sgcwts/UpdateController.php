@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Sgcwt;
 use App\Http\Requests\Admin\Sgcwts\UpdateRequest;
 use Illuminate\Support\Str;
+use App\Models\Status;
 
 class UpdateController extends Controller
 {
@@ -17,6 +18,8 @@ class UpdateController extends Controller
             $data['slug'] = Str::slug($data['title']);
 
         $sgcwt->update($data);
-        return view('admin.sgcwts.show', compact('sgcwt'));
+
+        $statuses = Status::all()->pluck('title','id')->toArray();
+        return view('admin.sgcwts.show', compact('sgcwt', 'statuses'));
     }
 }

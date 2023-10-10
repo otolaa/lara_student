@@ -35,7 +35,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Title</th>
-                                <th>Slug</th>
+                                <th>Status</th>
                                 <th>Created</th>
                                 <th>Updated</th>
                                 <th>Actions</th>
@@ -46,7 +46,7 @@
                             <tr>
                                 <td>{{ $sgcwt->id }}</td>
                                 <td>{{ $sgcwt->title }}</td>
-                                <td>{{ $sgcwt->slug }}</td>
+                                <td>{{ $statuses[$sgcwt->status_id] }}</td>
                                 <td>{{ $sgcwt->created_at }}</td>
                                 <td>{{ $sgcwt->updated_at }}</td>
                                 <td>

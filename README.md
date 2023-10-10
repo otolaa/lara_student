@@ -45,3 +45,9 @@ php artisan make:model Course -m
 php artisan make:model Status -m
 php artisan make:model Sgcwt -m
 ```
+
+### 0.3.6
+```
+php artisan make:migration add_column_status_to_sgcwts_table
+php artisan migrate
+```

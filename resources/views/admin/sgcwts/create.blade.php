@@ -47,6 +47,16 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <label>Statuses</label>
+                                <select name="status_id" class="form-control">
+                                    @foreach($statuses as $status)
+                                        <option value="{{ $status->id }}"
+                                            {{ $status->id == old('status_id') ? ' selected':'' }}
+                                        >{{ $status->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                         <div class="card-footer">
                             <input type="submit" class="btn btn-primary" value="Добавить">

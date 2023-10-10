@@ -23,6 +23,7 @@ class StoreRequest extends FormRequest
         return [
             'title'=>'required|string',
             'slug'=>'nullable|string',
+            'status_id'=>'required|integer|exists:statuses,id',
         ];
     }
 }

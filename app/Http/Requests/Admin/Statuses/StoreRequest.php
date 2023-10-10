@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\Groups;
+namespace App\Http\Requests\Admin\Statuses;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,8 +21,8 @@ class UpdateRequest extends FormRequest
      */    public function rules(): array
     {
         return [
-            'title'=>'required|string|unique:courses,title,'.$this->group_id,
-            'slug'=>'required|string|unique:courses,slug,'.$this->group_id,
+            'title'=>'required|string',
+            'slug'=>'required|string',
         ];
     }
 }

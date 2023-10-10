@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Edit</h1>
+                <h1 class="m-0">Add</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -24,16 +24,18 @@
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+            {{--<div class="col-12">--}}
+                {{--<a href="#" type="button" class="btn btn-success">Добавить</a>--}}
+            {{--</div>--}}
             <div class="col-6">
                 <div class="card card-primary">
-                    <form method="POST" action="{{ route('admin.groups.update', $group->id) }}">
+                    <form method="POST" action="{{ route('admin.statuses.store') }}">
                         @csrf
-                        @method('PATCH')
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="exampleInputTitle1">Title</label>
                                 <input type="text" name="title" class="form-control" id="exampleInputTitle1"
-                                       value="{{ $group->title  }}"
+                                       value="{{ old('title') }}"
                                        placeholder="title">
                                 @error('title')
                                     <div class="text-danger">{{ $message }}</div>
@@ -42,16 +44,15 @@
                             <div class="form-group">
                                 <label for="exampleInputSlug1">Slug</label>
                                 <input type="text" name="slug" class="form-control" id="exampleInputSlug1"
-                                       value="{{ $group->slug  }}"
-                                       placeholder="title">
+                                       value="{{ old('slug') }}"
+                                       placeholder="">
                                 @error('slug')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
                         <div class="card-footer">
-                            <input type="hidden" name="group_id" value="{{ $group->id }}">
-                            <input type="submit" class="btn btn-primary" value="Изменить">
+                            <input type="submit" class="btn btn-primary" value="Добавить">
                         </div>
                     </form>
                 </div>

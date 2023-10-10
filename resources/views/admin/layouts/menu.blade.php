@@ -23,3 +23,9 @@
         <p>Группы</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('admin.statuses.index') }}" class="nav-link {{ (request()->is('admin/statuses*')) ? 'active' : '' }}">
+        <i class="nav-icon fas fa-circle"></i>
+        <p>Статус</p>
+    </a>
+</li>

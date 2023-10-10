@@ -51,6 +51,16 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix'=>'admin', 'm
         Route::patch('/{group}', 'UpdateController')->name('admin.groups.update');
         Route::delete('/{group}', 'DeleteController')->name('admin.groups.delete');
     });
+
+    Route::group(['namespace' => 'Statuses', 'prefix'=>'statuses'], function () {
+        Route::get('/', 'IndexController')->name('admin.statuses.index');
+        Route::get('/create', 'CreateController')->name('admin.statuses.create');
+        Route::post('/', 'StoreController')->name('admin.statuses.store');
+        Route::get('/{status}', 'ShowController')->name('admin.statuses.show');
+        Route::get('/{status}/edit', 'EditController')->name('admin.statuses.edit');
+        Route::patch('/{status}', 'UpdateController')->name('admin.statuses.update');
+        Route::delete('/{status}', 'DeleteController')->name('admin.statuses.delete');
+    });
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

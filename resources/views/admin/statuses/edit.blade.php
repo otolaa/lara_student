@@ -26,14 +26,14 @@
         <div class="row">
             <div class="col-6">
                 <div class="card card-primary">
-                    <form method="POST" action="{{ route('admin.groups.update', $group->id) }}">
+                    <form method="POST" action="{{ route('admin.statuses.update', $status->id) }}">
                         @csrf
                         @method('PATCH')
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="exampleInputTitle1">Title</label>
                                 <input type="text" name="title" class="form-control" id="exampleInputTitle1"
-                                       value="{{ $group->title  }}"
+                                       value="{{ $status->title  }}"
                                        placeholder="title">
                                 @error('title')
                                     <div class="text-danger">{{ $message }}</div>
@@ -42,7 +42,7 @@
                             <div class="form-group">
                                 <label for="exampleInputSlug1">Slug</label>
                                 <input type="text" name="slug" class="form-control" id="exampleInputSlug1"
-                                       value="{{ $group->slug  }}"
+                                       value="{{ $status->slug  }}"
                                        placeholder="title">
                                 @error('slug')
                                     <div class="text-danger">{{ $message }}</div>
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <input type="hidden" name="group_id" value="{{ $group->id }}">
+                            <input type="hidden" name="status_id" value="{{ $status->id }}">
                             <input type="submit" class="btn btn-primary" value="Изменить">
                         </div>
                     </form>

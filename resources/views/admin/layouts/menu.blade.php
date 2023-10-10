@@ -13,7 +13,13 @@
 </li>
 <li class="nav-item">
     <a href="{{ route('admin.courses.index') }}" class="nav-link {{ (request()->is('admin/courses*')) ? 'active' : '' }}">
-        <i class="nav-icon fas fa-file"></i>
+        <i class="nav-icon fas fa-circle"></i>
         <p>Курсы</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ route('admin.groups.index') }}" class="nav-link {{ (request()->is('admin/groups*')) ? 'active' : '' }}">
+        <i class="nav-icon fas fa-circle"></i>
+        <p>Группы</p>
     </a>
 </li>

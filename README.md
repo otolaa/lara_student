@@ -43,5 +43,5 @@ php artisan storage:link
 php artisan make:model StudentGroupe -m
 php artisan make:model Course -m
 php artisan make:model Status -m
-php artisan make:model SGCWT -m
+php artisan make:model Sgcwt -m
 ```

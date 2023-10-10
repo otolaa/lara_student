@@ -31,6 +31,16 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix'=>'admin', 'm
         Route::patch('/{user}', 'UpdateController')->name('admin.user.update');
         Route::delete('/{user}', 'DeleteController')->name('admin.user.delete');
     });
+
+    Route::group(['namespace' => 'Courses', 'prefix'=>'courses'], function () {
+        Route::get('/', 'IndexController')->name('admin.courses.index');
+        Route::get('/create', 'CreateController')->name('admin.courses.create');
+        Route::post('/', 'StoreController')->name('admin.courses.store');
+        Route::get('/{course}', 'ShowController')->name('admin.courses.show');
+        Route::get('/{course}/edit', 'EditController')->name('admin.courses.edit');
+        Route::patch('/{course}', 'UpdateController')->name('admin.courses.update');
+        Route::delete('/{course}', 'DeleteController')->name('admin.courses.delete');
+    });
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

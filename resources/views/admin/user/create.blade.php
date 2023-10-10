@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-6">
                 <div class="card card-primary">
-                    <form method="POST" action="{{ route('admin.user.store') }}">
+                    <form method="POST" action="{{ route('admin.user.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
@@ -54,6 +54,21 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                    <label for="exampleInputFile1">Photo</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="photo" class="custom-file-input" id="exampleInputPhoto1">
+                                            <label class="custom-file-label" for="exampleInputPhoto1">Выберите файл</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Загрузите</span>
+                                        </div>
+                                    </div>
+                                    @error('photo')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             <div class="form-group">
                                 <label>Role</label>
                                 <select name="role" class="form-control">

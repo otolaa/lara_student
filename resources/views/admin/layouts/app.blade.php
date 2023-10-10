@@ -18,7 +18,7 @@
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item d-flex align-items-center">
-                        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
+                        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="/admin/users/{{ Auth::user()->id }}" role="button">
                             <i class="fas fa-user"></i> {{ Auth::user()->name }}
                         </a>
                     </li>
@@ -48,4 +48,7 @@
             </footer>
         </div>
     </body>
+    <style>
+        .custom-file-input:lang(en)~.custom-file-label::after{  content: '...'; }
+    </style>
 </x-laravel-ui-adminlte::adminlte-layout>

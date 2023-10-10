@@ -26,6 +26,7 @@ class UpdateRequest extends FormRequest
             'user_id'=>'required|integer|exists:users,id',
             'password'=>'nullable|string',
             'role'=>'required|int',
+            'photo'=>'nullable|file',
         ];
     }
 }

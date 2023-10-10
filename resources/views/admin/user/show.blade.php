@@ -8,6 +8,11 @@
                 <div class="col-sm-6 d-flex align-items-center">
                     <h1 class="m-0 mr-2">{{ $user->name  }}</h1>
                     <a class="btn btn-success btn-sm mr-1" href="{{ route('admin.user.edit', $user->id)  }}"><i class="fas fa-pencil-alt"></i></a>
+                    <form action="{{ route('admin.user.delete', $user->id)  }}" method="POST" class="d-inline-block">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                    </form>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -44,6 +49,18 @@
                                 <tr>
                                     <th>Email</th>
                                     <td>{{ $user->email  }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Photo</th>
+                                    <td>
+                                        @if($user->photo)
+                                            <div style='width: 100px; height: 100px;
+                                                border-radius: 50%;
+                                                background-image: url("{{ url('storage/'.$user->photo)  }}");
+                                                background-size: contain;'>
+                                            </div>
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Role</th>

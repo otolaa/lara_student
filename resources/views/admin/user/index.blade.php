@@ -35,6 +35,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Role</th>
+                                <th>Photo</th>
                                 <th>Created</th>
                                 <th>Updated</th>
                                 <th>Actions</th>
@@ -47,6 +48,15 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ App\Models\User::getRole()[$user->role]  }}</td>
+                                <td style="width: 75px;">
+                                    @if($user->photo)
+                                        <div style='width: 50px; height: 50px;
+                                            border-radius: 50%;
+                                            background-image: url("{{ url('storage/'.$user->photo)  }}");
+                                            background-size: contain;'>
+                                        </div>
+                                    @endif
+                                </td>
                                 <td>{{ $user->created_at }}</td>
                                 <td>{{ $user->updated_at }}</td>
                                 <td>

@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-6">
                 <div class="card card-primary">
-                    <form method="POST" action="{{ route('admin.user.update', $user->id) }}">
+                    <form method="POST" action="{{ route('admin.user.update', $user->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         <div class="card-body">
@@ -49,9 +49,29 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPass">Password</label>
-                                <input type="password" name="password" class="form-control" id="exampleInputPass"
+                                <input type="password" name="password" class="form-control" id="exampleInputPass" value=""
                                        placeholder="Password">
                                 @error('password')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile1">Photo</label>
+                                @if($user->photo)
+                                    <div class="w-25 mb-2">
+                                        <img src="{{ url('storage/'.$user->photo)  }}" class="img-fluid">
+                                    </div>
+                                @endif
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" name="photo" class="custom-file-input" id="exampleInputPhoto">
+                                        <label class="custom-file-label" for="exampleInputPhoto">Выберите файл</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Загрузите</span>
+                                    </div>
+                                </div>
+                                @error('photo')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

@@ -36,6 +36,7 @@ npm run build
 ```
 php artisan make:migration add_column_role_to_users_table
 php artisan migrate
+php artisan storage:link
 ```
 ### 0.3.5 - Model
 ```

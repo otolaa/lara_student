@@ -12,6 +12,12 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="{{ route('admin.sgcwts.index') }}" class="nav-link {{ (request()->is('admin/sgcwts*')) ? 'active' : '' }}">
+        <i class="nav-icon fas fa-circle"></i>
+        <p>Назначение</p>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{ route('admin.courses.index') }}" class="nav-link {{ (request()->is('admin/courses*')) ? 'active' : '' }}">
         <i class="nav-icon fas fa-circle"></i>
         <p>Курсы</p>

@@ -61,6 +61,16 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix'=>'admin', 'm
         Route::patch('/{status}', 'UpdateController')->name('admin.statuses.update');
         Route::delete('/{status}', 'DeleteController')->name('admin.statuses.delete');
     });
+
+    Route::group(['namespace' => 'Sgcwts', 'prefix'=>'sgcwts'], function () {
+        Route::get('/', 'IndexController')->name('admin.sgcwts.index');
+        Route::get('/create', 'CreateController')->name('admin.sgcwts.create');
+        Route::post('/', 'StoreController')->name('admin.sgcwts.store');
+        Route::get('/{sgcwt}', 'ShowController')->name('admin.sgcwts.show');
+        Route::get('/{sgcwt}/edit', 'EditController')->name('admin.sgcwts.edit');
+        Route::patch('/{sgcwt}', 'UpdateController')->name('admin.sgcwts.update');
+        Route::delete('/{sgcwt}', 'DeleteController')->name('admin.sgcwts.delete');
+    });
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -54,7 +54,7 @@
                                 </td>
                                 <td>
                                     @if (isset($sgcwt->teacher_id) && isset($teachers) && is_array($teachers))
-                                        {{ $teachers[$sgcwt->teacher_id] }}
+                                        <a href="/admin/users/{{ $sgcwt->teacher_id }}">{{ $teachers[$sgcwt->teacher_id] }}</a>
                                     @endif
                                 </td>
                                 <td>{{ $sgcwt->created_at }}</td>

@@ -60,7 +60,7 @@
                                 @if (isset($sgcwt->teacher_id) && isset($teachers) && is_array($teachers))
                                 <tr>
                                     <th>Teacher</th>
-                                    <td>{{ $teachers[$sgcwt->teacher_id] }}</td>
+                                    <td><a href="/admin/users/{{ $sgcwt->teacher_id }}">{{ $teachers[$sgcwt->teacher_id] }}</a></td>
                                 </tr>
                                 @endif
 

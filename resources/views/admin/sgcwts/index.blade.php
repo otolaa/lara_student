@@ -36,6 +36,7 @@
                                 <th>ID</th>
                                 <th>Title</th>
                                 <th>Status</th>
+                                <th>Teacher</th>
                                 <th>Created</th>
                                 <th>Updated</th>
                                 <th>Actions</th>
@@ -46,7 +47,16 @@
                             <tr>
                                 <td>{{ $sgcwt->id }}</td>
                                 <td>{{ $sgcwt->title }}</td>
-                                <td>{{ $statuses[$sgcwt->status_id] }}</td>
+                                <td>
+                                    @if (isset($sgcwt->status_id) && isset($statuses) && is_array($statuses))
+                                        {{ $statuses[$sgcwt->status_id] }}
+                                    @endif
+                                </td>
+                                <td>
+                                    @if (isset($sgcwt->teacher_id) && isset($teachers) && is_array($teachers))
+                                        {{ $teachers[$sgcwt->teacher_id] }}
+                                    @endif
+                                </td>
                                 <td>{{ $sgcwt->created_at }}</td>
                                 <td>{{ $sgcwt->updated_at }}</td>
                                 <td>

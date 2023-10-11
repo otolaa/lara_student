@@ -64,7 +64,7 @@
                                 @endif
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" name="photo" class="custom-file-input" id="exampleInputPhoto">
+                                        <input type="file" name="photo" class="custom-file-input" onchange="showFile(this)" id="exampleInputPhoto">
                                         <label class="custom-file-label" for="exampleInputPhoto">Выберите файл</label>
                                     </div>
                                     <div class="input-group-append">
@@ -99,4 +99,26 @@
     </div><!-- /.container-fluid -->
 </section>
 <!-- /.content -->
+<script type="text/javascript">
+    function showFile(input) {
+        let file = input.files[0];
+
+        // console.log(`File name: ${file.name}`); // например, my.png
+        // console.log(`Last modified: ${file.lastModified}`); // например, 1552830408824
+
+        var node = input.parentNode.querySelector('.custom-file-label');
+        if (node) {
+            node.textContent = `${file.name} - ${formatBytes(file.size)}`;
+        }
+    }
+
+    function formatBytes(bytes, decimals = 2) {
+        if (!+bytes) return '0 Bytes'
+        const k = 1024
+        const dm = decimals < 0 ? 0 : decimals
+        const sizes = ['Bytes', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']
+        const i = Math.floor(Math.log(bytes) / Math.log(k))
+        return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`
+    }
+</script>
 @endsection

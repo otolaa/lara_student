@@ -20,9 +20,10 @@ Route::get('/', function () {
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix'=>'admin', 'middleware'=>['auth','admin']], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('admin.main.index');
+        Route::get('/setting', 'SettingController')->name('admin.main.setting');
     });
 
-     Route::group(['namespace' => 'User', 'prefix'=>'users'], function () {
+    Route::group(['namespace' => 'User', 'prefix'=>'users'], function () {
         Route::get('/', 'IndexController')->name('admin.user.index');
         Route::get('/create', 'CreateController')->name('admin.user.create');
         Route::post('/', 'StoreController')->name('admin.user.store');

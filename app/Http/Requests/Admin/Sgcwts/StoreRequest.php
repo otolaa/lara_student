@@ -24,6 +24,7 @@ class StoreRequest extends FormRequest
             'title'=>'required|string',
             'slug'=>'nullable|string',
             'status_id'=>'required|integer|exists:statuses,id',
+            'teacher_id'=>'required|integer|exists:users,id',
         ];
     }
 }

@@ -48,12 +48,22 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Statuses</label>
+                                <label>Status</label>
                                 <select name="status_id" class="form-control">
                                     @foreach($statuses as $status)
                                         <option value="{{ $status->id }}"
                                             {{ $status->id == old('status_id') ? ' selected':'' }}
                                         >{{ $status->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Teacher</label>
+                                <select name="teacher_id" class="form-control">
+                                    @foreach($teachers as $teacher)
+                                        <option value="{{ $teacher->id }}"
+                                            {{ $teacher->id == old('teacher_id') ? ' selected':'' }}
+                                        >{{ $teacher->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

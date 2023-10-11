@@ -49,10 +49,21 @@
                                     <th>Slug</th>
                                     <td>{{ $sgcwt->slug }}</td>
                                 </tr>
+
+                                @if (isset($sgcwt->teacher_id) && isset($statuses) && is_array($statuses))
                                 <tr>
                                     <th>Status</th>
-                                    <td>{{ $statuses[$sgcwt->status_id]  }}</td>
+                                    <td>{{ $statuses[$sgcwt->status_id] }}</td>
                                 </tr>
+                                @endif
+
+                                @if (isset($sgcwt->teacher_id) && isset($teachers) && is_array($teachers))
+                                <tr>
+                                    <th>Teacher</th>
+                                    <td>{{ $teachers[$sgcwt->teacher_id] }}</td>
+                                </tr>
+                                @endif
+
                                 <tr>
                                     <th>Created</th>
                                     <td>{{ $sgcwt->created_at  }}</td>

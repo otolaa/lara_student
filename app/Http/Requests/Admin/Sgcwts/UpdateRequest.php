@@ -24,6 +24,7 @@ class UpdateRequest extends FormRequest
             'title'=>'required|string|unique:courses,title,'.$this->sgcwt_id,
             'slug'=>'nullable|string',
             'status_id'=>'required|integer|exists:statuses,id',
+            'teacher_id'=>'required|integer|exists:users,id',
         ];
     }
 }

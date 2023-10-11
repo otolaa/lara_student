@@ -51,3 +51,9 @@ php artisan make:model Sgcwt -m
 php artisan make:migration add_column_status_to_sgcwts_table
 php artisan migrate
 ```
+
+### 0.3.7
+```
+php artisan make:migration add_column_user_to_sgcwts_table
+php artisan migrate
+```

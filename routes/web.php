@@ -45,12 +45,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix'=>'admin', 'm
 
     Route::group(['namespace' => 'Groups', 'prefix'=>'groups'], function () {
         Route::get('/', 'IndexController')->name('admin.groups.index');
-        Route::get('/create', 'CreateController')->name('admin.groups.create');
-        Route::post('/', 'StoreController')->name('admin.groups.store');
-        Route::get('/{group}', 'ShowController')->name('admin.groups.show');
-        Route::get('/{group}/edit', 'EditController')->name('admin.groups.edit');
-        Route::patch('/{group}', 'UpdateController')->name('admin.groups.update');
-        Route::delete('/{group}', 'DeleteController')->name('admin.groups.delete');
+        Route::get('/create', 'IndexController@create')->name('admin.groups.create');
+        Route::post('/', 'IndexController@store')->name('admin.groups.store');
+        Route::get('/{group}', 'IndexController@show')->name('admin.groups.show');
+        Route::get('/{group}/edit', 'IndexController@edit')->name('admin.groups.edit');
+        Route::patch('/{group}', 'IndexController@update')->name('admin.groups.update');
+        Route::delete('/{group}', 'IndexController@delete')->name('admin.groups.delete');
     });
 
     Route::group(['namespace' => 'Statuses', 'prefix'=>'statuses'], function () {

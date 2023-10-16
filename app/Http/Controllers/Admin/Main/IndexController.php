@@ -14,4 +14,11 @@ class IndexController extends Controller
         $sgcwt_count = Sgcwt::all()->count();
         return view('admin.main.index', compact('user_count', 'sgcwt_count'));
     }
+
+    public function setting()
+    {
+        $user_count = User::all()->count();
+        $sgcwt_count = Sgcwt::all()->count();
+        return view('admin.main.setting', compact('user_count', 'sgcwt_count'));
+    }
 }

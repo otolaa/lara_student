@@ -72,6 +72,16 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix'=>'admin', 'm
         Route::patch('/{sgcwt}', 'IndexController@update')->name('admin.sgcwts.update');
         Route::delete('/{sgcwt}', 'IndexController@delete')->name('admin.sgcwts.delete');
     });
+
+    Route::group(['namespace' => 'Settings', 'prefix'=>'settings'], function () {
+        Route::get('/', 'IndexController')->name('admin.settings.index');
+        Route::get('/create', 'IndexController@create')->name('admin.settings.create');
+        Route::post('/', 'IndexController@store')->name('admin.settings.store');
+        Route::get('/{setting}', 'IndexController@show')->name('admin.settings.show');
+        Route::get('/{setting}/edit', 'IndexController@edit')->name('admin.settings.edit');
+        Route::patch('/{setting}', 'IndexController@update')->name('admin.settings.update');
+        Route::delete('/{setting}', 'IndexController@delete')->name('admin.settings.delete');
+    });
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

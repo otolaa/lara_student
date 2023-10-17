@@ -7,7 +7,7 @@ use App\Http\Requests\Admin\User\StoreRequest;
 //use App\Mail\User\PasswordMail;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
+//use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Admin\User\UpdateRequest;

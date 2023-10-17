@@ -67,12 +67,18 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <i class="bi bi-arrow-return-left"></i> {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                    @if (Auth::user()->role == App\Models\User::ROLE_ADMIN)
+                                    <a href="{{ route('admin.main.index') }}" class="dropdown-item">
+                                        <i class="bi bi-unlock-fill"></i> AdminPanel
+                                    </a>
+                                    @endif
                                 </div>
                             </li>
                         @endguest

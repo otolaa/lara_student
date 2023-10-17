@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\User\StoreRequest;
-use App\Mail\User\PasswordMail;
+//use App\Mail\User\PasswordMail;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -53,12 +53,6 @@ class IndexController extends Controller
         return redirect()->route('admin.user.index');
     }
 
-    public function delete(User $user)
-    {
-        $user->delete();
-        return redirect()->route('admin.user.index');
-    }
-
     public function update(UpdateRequest $request, User $user)
     {
         $data = $request->validated();
@@ -74,5 +68,11 @@ class IndexController extends Controller
         //dd($data);
         $user->update($data);
         return view('admin.user.show', compact('user'));
+    }
+
+    public function delete(User $user)
+    {
+        $user->delete();
+        return redirect()->route('admin.user.index');
     }
 }

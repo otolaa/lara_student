@@ -22,7 +22,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title'=>'required|string|unique:courses,title,'.$this->course_id,
-            'slug'=>'required|string|unique:courses,slug,'.$this->course_id,
+            'slug'=>'nullable|string',
         ];
     }
 }

@@ -35,12 +35,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix'=>'admin', 'm
 
     Route::group(['namespace' => 'Courses', 'prefix'=>'courses'], function () {
         Route::get('/', 'IndexController')->name('admin.courses.index');
-        Route::get('/create', 'CreateController')->name('admin.courses.create');
-        Route::post('/', 'StoreController')->name('admin.courses.store');
-        Route::get('/{course}', 'ShowController')->name('admin.courses.show');
-        Route::get('/{course}/edit', 'EditController')->name('admin.courses.edit');
-        Route::patch('/{course}', 'UpdateController')->name('admin.courses.update');
-        Route::delete('/{course}', 'DeleteController')->name('admin.courses.delete');
+        Route::get('/create', 'IndexController@create')->name('admin.courses.create');
+        Route::post('/', 'IndexController@store')->name('admin.courses.store');
+        Route::get('/{course}', 'IndexController@show')->name('admin.courses.show');
+        Route::get('/{course}/edit', 'IndexController@edit')->name('admin.courses.edit');
+        Route::patch('/{course}', 'IndexController@update')->name('admin.courses.update');
+        Route::delete('/{course}', 'IndexController@delete')->name('admin.courses.delete');
     });
 
     Route::group(['namespace' => 'Groups', 'prefix'=>'groups'], function () {
@@ -65,12 +65,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix'=>'admin', 'm
 
     Route::group(['namespace' => 'Sgcwts', 'prefix'=>'sgcwts'], function () {
         Route::get('/', 'IndexController')->name('admin.sgcwts.index');
-        Route::get('/create', 'CreateController')->name('admin.sgcwts.create');
-        Route::post('/', 'StoreController')->name('admin.sgcwts.store');
-        Route::get('/{sgcwt}', 'ShowController')->name('admin.sgcwts.show');
-        Route::get('/{sgcwt}/edit', 'EditController')->name('admin.sgcwts.edit');
-        Route::patch('/{sgcwt}', 'UpdateController')->name('admin.sgcwts.update');
-        Route::delete('/{sgcwt}', 'DeleteController')->name('admin.sgcwts.delete');
+        Route::get('/create', 'IndexController@create')->name('admin.sgcwts.create');
+        Route::post('/', 'IndexController@store')->name('admin.sgcwts.store');
+        Route::get('/{sgcwt}', 'IndexController@show')->name('admin.sgcwts.show');
+        Route::get('/{sgcwt}/edit', 'IndexController@edit')->name('admin.sgcwts.edit');
+        Route::patch('/{sgcwt}', 'IndexController@update')->name('admin.sgcwts.update');
+        Route::delete('/{sgcwt}', 'IndexController@delete')->name('admin.sgcwts.delete');
     });
 });
 
